@@ -3,7 +3,7 @@ import ContactInfo from '@/components/contact/ContactInfo';
 import ContactForm from '@/components/contact/ContactForm';
 
 export const metadata = {
-  title: 'Contact | Dereje Negash - Certified Accountant',
+  title: 'Contact',
   description: 'Get in touch with Dereje Negash, a certified accountant based in Addis Ababa, Ethiopia.',
 };
 

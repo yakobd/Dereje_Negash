@@ -105,7 +105,7 @@ export default function HeroSection() {
             animate="visible"
             variants={fadeRight}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex justify-center lg:justify-end"
+            className="hidden lg:flex justify-end"
           >
             <div className="relative">
               {/* Gold accent ring */}

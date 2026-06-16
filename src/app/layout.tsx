@@ -7,8 +7,19 @@ import Footer from "@/components/layout/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Dereje Negash | Certified Accountant",
-  description: "Professional accounting and bookkeeping services in Addis Ababa, Ethiopia.",
+  title: {
+    default: 'Dereje Negash | Certified Accountant',
+    template: '%s | Dereje Negash',
+  },
+  description: 'Professional accounting and bookkeeping services in Addis Ababa, Ethiopia. Monthly bookkeeping, annual financial reporting, and more.',
+  keywords: ['accountant', 'bookkeeping', 'financial reporting', 'Addis Ababa', 'Ethiopia', 'Dereje Negash'],
+  authors: [{ name: 'Dereje Negash' }],
+  openGraph: {
+    title: 'Dereje Negash | Certified Accountant',
+    description: 'Professional accounting and bookkeeping services in Addis Ababa, Ethiopia.',
+    type: 'website',
+    locale: 'en_US',
+  },
 };
 
 export default function RootLayout({

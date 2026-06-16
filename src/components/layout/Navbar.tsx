@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
 const navLinks = [
@@ -13,6 +14,11 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   return (
     <nav className="sticky top-0 z-50 bg-[#0A1628] border-b border-[#1B3A6B]">
@@ -30,14 +36,18 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-white transition-colors hover:text-[#C9A84C]"
+                className={`transition-colors hover:text-[#C9A84C] ${
+                  pathname === link.href ? 'text-[#C9A84C] font-semibold' : 'text-white'
+                }`}
               >
                 {link.name}
               </Link>
             ))}
             <Link
               href="/contact"
-              className="rounded-md border border-[#C9A84C] px-4 py-2 text-[#C9A84C] transition-colors hover:bg-[#C9A84C] hover:text-[#0A1628]"
+              className={`rounded-md border border-[#C9A84C] px-4 py-2 transition-colors hover:bg-[#C9A84C] hover:text-[#0A1628] ${
+                pathname === '/contact' ? 'bg-[#C9A84C] text-[#0A1628]' : 'text-[#C9A84C]'
+              }`}
             >
               Contact
             </Link>
@@ -60,7 +70,9 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-white transition-colors hover:text-[#C9A84C]"
+                className={`transition-colors hover:text-[#C9A84C] ${
+                  pathname === link.href ? 'text-[#C9A84C] font-semibold' : 'text-white'
+                }`}
               >
                 {link.name}
               </Link>
@@ -68,7 +80,9 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setIsOpen(false)}
-              className="rounded-md border border-[#C9A84C] px-4 py-2 text-center text-[#C9A84C] transition-colors hover:bg-[#C9A84C] hover:text-[#0A1628]"
+              className={`rounded-md border border-[#C9A84C] px-4 py-2 text-center transition-colors hover:bg-[#C9A84C] hover:text-[#0A1628] ${
+                pathname === '/contact' ? 'bg-[#C9A84C] text-[#0A1628]' : 'text-[#C9A84C]'
+              }`}
             >
               Contact
             </Link>

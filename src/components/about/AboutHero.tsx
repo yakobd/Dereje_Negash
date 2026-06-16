@@ -85,7 +85,7 @@ export default function AboutHero() {
             viewport={{ once: true }}
             variants={fadeLeft}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex justify-center lg:justify-end"
+            className="hidden lg:flex justify-end"
           >
             <div className="relative">
               <div className="absolute -inset-2 rounded-2xl bg-gradient-to-br from-[#C9A84C] to-[#1B3A6B] opacity-60 blur-sm" />
